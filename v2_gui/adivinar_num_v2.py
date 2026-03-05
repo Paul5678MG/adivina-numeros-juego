@@ -13,11 +13,14 @@ def generar_lista():
             if x<3:
                 messagebox.showwarning("Atención", "Ingresar un número mayor a 3 ⚠")
                 return
+            elif x > 50:
+                messagebox.showwarning("Atención", "La cantidad máxima es 50")
+                return
             else:
                 break
         datos=list()
         while len(datos)<x:
-            num=r.randint(1,101)
+            num=r.randint(1,100)
             if num not in datos:
                 datos.append(num)
         datos.sort()
@@ -66,7 +69,7 @@ ventana.title("Adivina el Número - Paul Edition")
 ventana.geometry("400x400")
 
 #Etiquetas:
-instrucciones=tk.Label(ventana, text="Ingresar un número mayor o igual a 3:",font=("Arial", 10)) #scribir una etiqueta label
+instrucciones=tk.Label(ventana, text="Ingresar un número mayor o igual a 3 (maximo: 50):",font=("Arial", 10)) #scribir una etiqueta label
 instrucciones.pack(pady=10) #Espacio arriba y abajo
 
 #Crear text box:
